@@ -11,25 +11,30 @@ YELLOW=$(tput setaf 3)
 BLUE=$(tput setaf 4)
 RESET=$(tput sgr0)
 
-local scrDir=$(dirname "$(realpath "$0")")
+scrDir=$(dirname "$(realpath "$0")")
+echo "scrdir = ${scrDir}"
 
-local configDir=()
+configDir=()
 configDir+=("i3")
 configDir+=("polybar")
 configDir+=("rofi")
 configDir+=("picom")
 # configDir+=("polybar")
 
-local BAK=".bak"
+BAK=".bak"
+BAK_DIR="$HOME/.config/config-bak"
 for element in "${configDir[@]}"; do
   if [ ! -d "~/.config/$element" ]; then
     mkdir -p "~/.config/$element"
   else
-    mv "~/.config/$element"
+      if [ ! -d "$BAK_DIR" ]; then
+          mkdir "$BAK_DIR"
+      fi
+      mv "$HOME/.config/$element" "$BAK_DIR/${element}${BAK}"
+      echo "$OK $element backup ok"
   fi
-  cp -r "$scrDir"/"$element"/* ~/.config/"${element}${BAK}"
+  cp -r "$scrDir/$element" "$HOME/.config/${element}"
+  echo "$OK $element copy up"
 done
-
-
 
 
