@@ -30,10 +30,13 @@ for element in "${configDir[@]}"; do
       if [ ! -d "$BAK_DIR" ]; then
           mkdir "$BAK_DIR"
       fi
+      if [ -d "$BAK_DIR/${element}${BAK}" ]; then
+        rm -rf "$BAK_DIR/${element}${BAK}"
+      fi
       mv "$HOME/.config/$element" "$BAK_DIR/${element}${BAK}"
       echo "$OK $element backup ok"
   fi
-  cp -r "$scrDir/$element" "$HOME/.config/${element}"
+  cp -r "$scrDir/$element" "$HOME/.config/"
   echo "$OK $element copy up"
 done
 
