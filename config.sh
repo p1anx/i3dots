@@ -24,8 +24,8 @@ configDir+=("picom")
 BAK=".bak"
 BAK_DIR="$HOME/.config/config-bak"
 for element in "${configDir[@]}"; do
-  if [ ! -d "~/.config/$element" ]; then
-    mkdir -p "~/.config/$element"
+  if [ ! -d "$HOME/.config/$element" ]; then
+    mkdir -p "$HOME/.config/$element"
   else
       if [ ! -d "$BAK_DIR" ]; then
           mkdir "$BAK_DIR"
