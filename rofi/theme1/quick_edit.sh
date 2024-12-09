@@ -4,13 +4,13 @@ edit=${EDITOR:-nvim}
 configs="$HOME/.config"
 
 menu_edit=()
-menu_edit+=("i3wm")
+menu_edit+=("hyprland")
 menu_edit+=("mybin")
 menu_edit+=("vim")
 menu_edit+=("nvim")
 menu_edit+=("kitty")
 menu_edit+=("rofi")
-menu_edit+=("polybar")
+menu_edit+=("waybar")
 menu_edit+=(".zshrc")
 menu_edit+=(".bashrc")
 menu_edit+=("tmux")
@@ -43,19 +43,19 @@ EOF
 main() {
   # choice=$(menu | rofi -i -dmenu -config ~/.config/rofi/selector.rasi | cut -d. -f2)
 
-  choice=$(menu | rofi -no-lazy-grab -show -i -dmenu -config ~/.config/rofi/theme0/rofi/edit.rasi | cut -d' ' -f2)
+  choice=$(menu | rofi -no-config -no-lazy-grab -show -i -dmenu -theme ~/.config/rofi/theme0/rofi/launcher.rasi | cut -d' ' -f2)
 
 
   echo "$choice"
 
   # Map choices to corresponding files
   case $choice in
-  "i3wm") file="$configs/i3/config" ;;
+  "hyprland") file="$configs/hypr/hyprland.conf" ;;
   "vim") file="$configs/vim/vimrc" ;;
   "nvim") file="$configs/nvim/init.lua" ;;
   "kitty") file="$configs/kitty/kitty.conf" ;;
-  "rofi") file="$configs/rofi/config.rasi" ;;
-  "polybar") file="$configs/polybar/config.ini" ;;
+  "rofi") file="$configs/rofi/selector.rasi" ;;
+  "waybar") file="$configs/waybar/config.jsonc" ;;
   ".zshrc") file="$HOME/.zshrc" ;;
   ".bashrc") file="$HOME/.bashrc" ;;
   "mybin") file="$scrDir/quick_edit.sh" ;;

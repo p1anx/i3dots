@@ -10,4 +10,4 @@
 #         exit 0 ;;
 #     *) r_mode="drun" ;;
 # esac
-rofi -no-config -no-lazy-grab -show window -modi window -theme ~/.config/rofi/theme0/rofi/launcher.rasi
+rofi -no-lazy-grab -show window -modi window -config ~/.config/rofi/theme0/rofi/window_selector.rasi
