@@ -22,3 +22,6 @@ EOF
     exit 1
   fi
 }
+function nerd_font(){
+
+}
