@@ -25,3 +25,6 @@ EOF
 function nerd_font(){
 
 }
+function bluetooth(){
+  sudo apt install -y bluez blueman
+}
