@@ -11,6 +11,7 @@
 
 include $HOME/.config/i3/keybinds.conf
 include $HOME/.config/i3/startup.conf
+include $HOME/.config/i3/window_rules.conf
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
