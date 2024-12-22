@@ -48,7 +48,8 @@ gaps inner 8px
 smart_gaps inverse_outer
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #fe8019   #fe8019
+# client.focused          #4c7899 #285577 #ffffff #fe8019   #fe8019
+client.focused         #B1F0F7 #285577 #ffffff #FFCCEA   #FFCCEA
 # client.focused_inactive #333333 #5f676a #ffffff #484e50   #a89984
 client.focused_inactive #333333 #5f676a #ffffff #5f676a   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
