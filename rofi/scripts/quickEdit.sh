@@ -8,7 +8,7 @@ theme='style-5'
 
 ## Run
 menu_edit=()
-menu_edit+=("hyprland")
+menu_edit+=("i3")
 menu_edit+=("mybin")
 menu_edit+=("vim")
 menu_edit+=("nvim")
@@ -54,7 +54,7 @@ main() {
 
   # Map choices to corresponding files
   case $choice in
-  "hyprland") file="$configs/hypr/hyprland.conf" ;;
+  "i3") file="$configs/i3/config" ;;
   "vim") file="$configs/vim/vimrc" ;;
   "nvim") file="$configs/nvim/init.lua" ;;
   "kitty") file="$configs/kitty/kitty.conf" ;;
