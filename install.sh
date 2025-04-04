@@ -70,6 +70,7 @@ function main(){
   install_fish
   install_nerdfont
   install_gtk3
+  install_betterlockscreen
   sudo apt install rofi -y
   sudo apt install polybar -y
   sudo apt install feh -y
