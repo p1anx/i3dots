@@ -3,7 +3,7 @@
 local_dir=$(dirname $(realpath $0))
 function install_gtk3(){
   wget https://github.com/dracula/gtk/archive/master.zip
-  unzip gtk-master.zip 
+  unzip master.zip 
   sudo cp -r gtk-master /usr/share/themes/Dracula
   mkdir $HOME/.themes
   sudo cp -r gtk-master $HOME/.themes/Dracula 
