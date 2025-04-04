@@ -1,18 +1,21 @@
 #!/bin/bash 
-
 function install_gtk3(){
-  local local_dir=$(dirname $(realpath $0))
   wget https://github.com/dracula/gtk/archive/master.zip
   unzip master.zip 
   sudo cp -r gtk-master /usr/share/themes/Dracula
   mkdir $HOME/.themes
   sudo cp -r gtk-master $HOME/.themes/Dracula 
-  if [ ! -d $HOME/'.config/gtk-3.0' ];then
-    mkdir $HOME/.config/gtk-3.0
-  fi
-  cp $local_dir/settings.ini $HOME/'.config/gtk-3.0'
-  cp $local_dir/libadwaita-tc.py $HOME/.themes/Dracula
-  cd $HOME/.themes/Dracula
-  sudo chmod +x libadwaita-tc.py
-  ./libadwaita-tc.py
+  mkdir $HOME/.config/gtk-3.0
+  mkdir $HOME/.config/gtk-4.0
+
+  touch $HOME/.config/gtk-3.0/settings.ini
+  tee -a $HOME/.config/gtk-3.0/settings.ini << EOF
+[Settings]
+gtk-theme-name = Dracula
+gtk-font-name = Sans 14
+EOF
+  cp $HOME/.themes/Dracula/assets $HOME/.config -r
+  cp $HOME/.themes/Dracula/gtk-4.0/gtk.css $HOME/.config/gtk-4.0
+  cp $HOME/.themes/Dracula/gtk-4.0/gtk-dark.css $HOME/.config/gtk-4.0
 }
+

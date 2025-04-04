@@ -14,7 +14,7 @@ RESET=$(tput sgr0)
 scrDir=$(dirname "$(realpath "$0")")
 echo "scrdir = ${scrDir}"
 
-function i3_config(){
+function config_i3(){
 
 configDir=()
 configDir+=("i3")

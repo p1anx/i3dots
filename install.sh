@@ -61,21 +61,26 @@ function install_nerdfont(){
   tar -xJvf FiraCode.tar.xz
 
 }
-
-function main(){
-  sudo apt update -y
-  install_i3
-  install_autotiling
-  install_picom
-  install_fish
-  install_nerdfont
-  install_gtk3
-  install_betterlockscreen
+function install_essential(){
+  sudo apt install curl -y
   sudo apt install rofi -y
   sudo apt install polybar -y
   sudo apt install feh -y
   sudo apt install kitty -y
-  config
+
+}
+function main(){
+  sudo apt update -y
+  install_fish
+  install_essential
+  install_i3
+  install_autotiling
+  install_picom
+  install_nerdfont
+  install_gtk3
+  install_betterlockscreen
+  config_i3
+  betterlockscreen -u $HOME/.config/i3/wallpaper/Bonsai-big.jpg
 
 }
 main
