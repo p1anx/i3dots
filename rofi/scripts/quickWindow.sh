@@ -9,7 +9,7 @@
 #
 ## style-1     style-2     style-3     style-4     style-5
 
-dir="$HOME/.config/rofi/windows/type-5"
+dir="$HOME/.config/rofi/windows/type-7"
 theme='style-2'
 
 ## Run
