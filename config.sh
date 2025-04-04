@@ -14,6 +14,8 @@ RESET=$(tput sgr0)
 scrDir=$(dirname "$(realpath "$0")")
 echo "scrdir = ${scrDir}"
 
+function i3_config(){
+
 configDir=()
 configDir+=("i3")
 configDir+=("polybar")
@@ -41,4 +43,4 @@ for element in "${configDir[@]}"; do
   echo "$OK $element copy up"
 done
 
-
+}

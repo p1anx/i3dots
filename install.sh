@@ -2,6 +2,9 @@
 SCRIPT_DIR=$(dirname $(realpath $0))
 source $SCRIPT_DIR/picom/install.sh
 source $SCRIPT_DIR/i3/install.sh
+source $SCRIPT_DIR/betterlockscreen/install.sh
+source $SCRIPT_DIR/config.sh
+source $SCRIPT_DIR/gtk3/install.sh
 
 function install_fcitx5(){
   sudo apt install fcitx5 -y
@@ -24,6 +27,11 @@ EOF
     echo 'fcitx5 needs to write"export GTK_IM_MODULE=fcitx5;export QT_IM_MODULE=fcitx5;export XMODIFIERS=@im=fcitx5" in .zshrc or .bashrc'
     exit 1
   fi
+  sudo tee /etc/environment << EOF
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+EOF
 }
 function install_bluetooth(){
   sudo apt install -y bluez blueman
@@ -61,10 +69,12 @@ function main(){
   install_picom
   install_fish
   install_nerdfont
+  install_gtk3
   sudo apt install rofi -y
   sudo apt install polybar -y
   sudo apt install feh -y
   sudo apt install kitty -y
+  config
 
 }
 main
