@@ -19,6 +19,7 @@ configDir+=("i3")
 configDir+=("polybar")
 configDir+=("rofi")
 configDir+=("picom")
+configDir+=("kitty")
 # configDir+=("polybar")
 
 BAK=".bak"
