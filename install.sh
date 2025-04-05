@@ -27,7 +27,7 @@ EOF
     echo 'fcitx5 needs to write"export GTK_IM_MODULE=fcitx5;export QT_IM_MODULE=fcitx5;export XMODIFIERS=@im=fcitx5" in .zshrc or .bashrc'
     exit 1
   fi
-  sudo tee /etc/environment << EOF
+  sudo tee -a /etc/environment << EOF
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
