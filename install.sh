@@ -77,6 +77,7 @@ function main(){
   install_autotiling
   install_picom
   install_nerdfont
+  install_fcitx5
   install_gtk3
   install_betterlockscreen
   config_i3
